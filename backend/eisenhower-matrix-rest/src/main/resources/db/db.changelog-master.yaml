@@ -1,0 +1,6 @@
+databaseChangeLog:
+  - preConditions:
+      - runningAs:
+          username: liquibase
+  - include:
+      file: db/migrations/20240730-ecastilho_.yaml

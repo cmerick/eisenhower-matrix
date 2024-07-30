@@ -1,0 +1,12 @@
+
+services:
+  eisenhower_matrix_db:
+    image: postgres
+    container_name: eisenhower_matrix_db
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: 123
+    volumes:
+      - ./pg_data:/var/lib/postgresql/data
