@@ -1,5 +1,6 @@
 package com.cmerick.eisenhower_matrix.rest.models.tasks.entity;
 
+import com.cmerick.eisenhower_matrix.rest.enums.SimpleStatusEnum;
 import com.cmerick.eisenhower_matrix.rest.models.users.entity.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -9,6 +10,7 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.UUID;
 
@@ -24,12 +26,12 @@ public class Task implements Serializable {
 
     @Id
     @GeneratedValue
-    @Column(name = "task_id", updatable = false, nullable = false)
-    private UUID taskId;
+    @Column(name = "id", updatable = false, nullable = false)
+    private UUID id;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    private UUID userId;
 
     @Column(name = "title", nullable = false)
     private String title;
@@ -49,7 +51,10 @@ public class Task implements Serializable {
     @Column(name = "importance", nullable = false)
     private Integer importance;
 
+    @Column(name = "status", nullable = false)
+    private SimpleStatusEnum status;
+
     @Column(name = "created_at", nullable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    private Date createdAt = new Date();
+    private Timestamp createdAt;
 }

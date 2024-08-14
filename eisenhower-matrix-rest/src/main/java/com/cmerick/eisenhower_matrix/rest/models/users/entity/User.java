@@ -24,11 +24,14 @@ public class User implements Serializable {
     @Id
     @GeneratedValue
     @Column(name = "user_id", updatable = false, nullable = false)
-    private UUID userId;
+    private UUID id;
 
     @Column(name = "username", nullable = false, unique = true)
     private String username;
 
     @Column(name = "password", nullable = false)
     private String password;
+
+    @Column(name = "task_sequence")
+    private Integer taskSequence;
 }
