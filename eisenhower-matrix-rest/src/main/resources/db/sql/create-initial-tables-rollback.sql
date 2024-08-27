@@ -1,2 +1,2 @@
-DROP TABLE IF EXISTS tb_users;
 DROP TABLE IF EXISTS tb_tasks;
+DROP TABLE IF EXISTS tb_users;

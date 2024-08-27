@@ -1,7 +1,7 @@
-package com.cmerick.eisenhower_matrix.rest.dto.task;
+package com.cmerick.eisenhower_matrix.rest.dtos.task;
 
+import com.cmerick.eisenhower_matrix.rest.enums.SimpleBooleanEnum;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.Column;
 import lombok.Builder;
 import lombok.Data;
 
@@ -27,8 +27,8 @@ public class TaskRegisterRequestDto {
     private Date dueDate;
 
     @JsonProperty("urgency")
-    private Integer urgency;
+    private boolean urgency;
 
     @JsonProperty("importance")
-    private Integer importance;
+    private boolean importance;
 }

@@ -1,4 +1,4 @@
-package com.cmerick.eisenhower_matrix.rest.service;
+package com.cmerick.eisenhower_matrix.rest.services;
 
 
 import lombok.RequiredArgsConstructor;

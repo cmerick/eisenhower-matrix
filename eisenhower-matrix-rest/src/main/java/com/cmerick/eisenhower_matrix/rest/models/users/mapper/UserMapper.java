@@ -1,6 +1,6 @@
 package com.cmerick.eisenhower_matrix.rest.models.users.mapper;
 
-import com.cmerick.eisenhower_matrix.rest.dto.user.UserResponse;
+import com.cmerick.eisenhower_matrix.rest.dtos.user.UserResponseDto;
 import com.cmerick.eisenhower_matrix.rest.models.users.entity.User;
 import org.modelmapper.ModelMapper;
 
@@ -10,11 +10,11 @@ import java.util.Collections;
 public class UserMapper {
     private ModelMapper modelMapper;
 
-    public UserResponse map(User entityToMap) {
-        return modelMapper.map(entityToMap, UserResponse.class);
+    public UserResponseDto map(User entityToMap) {
+        return modelMapper.map(entityToMap, UserResponseDto.class);
     }
 
-    public Collection<UserResponse> map(Collection<User> entitiesToMap) {
+    public Collection<UserResponseDto> map(Collection<User> entitiesToMap) {
         if (null == entitiesToMap) {
             return Collections.emptyList();
         }

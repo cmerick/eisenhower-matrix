@@ -1,4 +1,4 @@
-package com.cmerick.eisenhower_matrix.rest.dto.exception;
+package com.cmerick.eisenhower_matrix.rest.dtos.exception;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;

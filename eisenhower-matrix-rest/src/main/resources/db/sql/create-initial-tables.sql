@@ -6,6 +6,7 @@ CREATE TABLE IF NOT EXISTS tb_users (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     username VARCHAR(255) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
+    role CHAR(3) NOT NULL,
     task_sequence INTEGER
 );
 
@@ -17,10 +18,10 @@ CREATE TABLE IF NOT EXISTS tb_tasks (
     task_number INTEGER NOT NULL,
     description TEXT,
     due_date DATE,
-    urgency INTEGER NOT NULL CHECK (urgency BETWEEN 1 AND 2),
-    importance INTEGER NOT NULL CHECK (importance BETWEEN 1 AND 2),
+    urgency BOOLEAN NOT NULL,
+    importance BOOLEAN NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     status CHAR(1) NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES tb_users (user_id),
+    FOREIGN KEY (user_id) REFERENCES tb_users (id),
     UNIQUE (user_id, task_number)
 );

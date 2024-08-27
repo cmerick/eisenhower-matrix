@@ -1,4 +1,4 @@
-package com.cmerick.eisenhower_matrix.rest.dto.task;
+package com.cmerick.eisenhower_matrix.rest.dtos.task;
 
 import lombok.Builder;
 import lombok.Data;

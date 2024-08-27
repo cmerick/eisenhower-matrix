@@ -1,4 +1,4 @@
-package com.cmerick.eisenhower_matrix.rest.dto.exception;
+package com.cmerick.eisenhower_matrix.rest.dtos.exception;
 
 import lombok.Builder;
 import lombok.Data;

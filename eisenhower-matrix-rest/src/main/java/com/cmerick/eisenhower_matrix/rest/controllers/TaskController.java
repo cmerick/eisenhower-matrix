@@ -1,17 +1,15 @@
-package com.cmerick.eisenhower_matrix.rest.controller;
+package com.cmerick.eisenhower_matrix.rest.controllers;
 
-import com.cmerick.eisenhower_matrix.rest.dto.task.TaskRegisterRequestDto;
-import com.cmerick.eisenhower_matrix.rest.dto.task.TaskResponse;
-import com.cmerick.eisenhower_matrix.rest.dto.task.TaskSearchRequestDto;
-import com.cmerick.eisenhower_matrix.rest.models.tasks.entity.Task;
-import com.cmerick.eisenhower_matrix.rest.service.TaskService;
+import com.cmerick.eisenhower_matrix.rest.dtos.task.TaskRegisterRequestDto;
+import com.cmerick.eisenhower_matrix.rest.dtos.task.TaskResponseDto;
+import com.cmerick.eisenhower_matrix.rest.dtos.task.TaskSearchRequestDto;
+import com.cmerick.eisenhower_matrix.rest.services.TaskService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
-import java.util.Optional;
 import java.util.UUID;
 
 @RestController
@@ -34,12 +32,12 @@ public class TaskController {
     }
 
     @GetMapping("all")
-    public ResponseEntity<Collection<TaskResponse>> findAll(TaskSearchRequestDto requestEntity) {
+    public ResponseEntity<Collection<TaskResponseDto>> findAll(TaskSearchRequestDto requestEntity) {
         return ResponseEntity.ok(this.service.findAll(requestEntity));
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<TaskResponse> getById(@PathVariable("id") UUID id) {
+    public ResponseEntity<TaskResponseDto> getById(@PathVariable("id") UUID id) {
         return ResponseEntity.ok(this.service.getById(id));
     }
 

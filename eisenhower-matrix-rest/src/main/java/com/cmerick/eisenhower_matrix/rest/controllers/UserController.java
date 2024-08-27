@@ -1,4 +1,4 @@
-package com.cmerick.eisenhower_matrix.rest.controller;
+package com.cmerick.eisenhower_matrix.rest.controllers;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;

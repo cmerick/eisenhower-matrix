@@ -1,6 +1,6 @@
 package com.cmerick.eisenhower_matrix.rest.models.tasks.mapper;
 
-import com.cmerick.eisenhower_matrix.rest.dto.task.TaskResponse;
+import com.cmerick.eisenhower_matrix.rest.dtos.task.TaskResponseDto;
 import com.cmerick.eisenhower_matrix.rest.models.tasks.entity.Task;
 import org.modelmapper.ModelMapper;
 
@@ -11,11 +11,11 @@ public class TaskMapper {
 
     private ModelMapper modelMapper;
 
-    public TaskResponse map(Task entityToMap) {
-        return modelMapper.map(entityToMap, TaskResponse.class);
+    public TaskResponseDto map(Task entityToMap) {
+        return modelMapper.map(entityToMap, TaskResponseDto.class);
     }
 
-    public Collection<TaskResponse> map(Collection<Task> entitiesToMap) {
+    public Collection<TaskResponseDto> map(Collection<Task> entitiesToMap) {
         if (null == entitiesToMap) {
             return Collections.emptyList();
         }
